@@ -1,6 +1,6 @@
 {
   "name": "@danielng23/dsh-edex-ui",
-  "description": "eDEX-UI style shell over the web surface: system telemetry left bar, network/world-view right bar, filesystem browser bottom-left, original UI centered",
+  "description": "dsh-edex-ui NovaFleet variant: dark navy mission-control dashboard with #3b82f6 accent, fleet calendar, and announcement widgets",
   "version": "0.1.0",
   "publishConfig": {
     "access": "public"

@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "filename": "novafleet-mission-control",
+    "url": "https://frontend-challange-five.vercel.app/",
+    "source": "vision",
+    "referenceShot": "dsh-edex-ui-novafleet/reference-shot.png"
+  },
+  "theme": {
+    "background": "#0f1726",
+    "panelTone": "#1e2938",
+    "primaryAccent": "#3b82f6",
+    "secondaryAccent": "#64748b",
+    "textPrimary": "#f8fafc",
+    "textSecondary": "#94a3b8",
+    "semanticColors": {
+      "success": "#22c55e",
+      "warn": "#fbbf24",
+      "error": "#ef4444",
+      "info": "#3b82f6"
+    },
+    "glowColor": "#3b82f6"
+  },
+  "borderFeatures": {
+    "frame": {
+      "presence": "none",
+      "style": "solid",
+      "widthPx": 0,
+      "color": "#334155",
+      "cornerRadiusPx": 0,
+      "glow": null,
+      "notes": "The reference has no outer frame around the page — the page background #0f1726 is the canvas; only the cards carry borders."
+    },
+    "cards": {
+      "presence": "full",
+      "style": "solid",
+      "widthPx": 1,
+      "color": "#334155",
+      "cornerRadiusPx": 10,
+      "glow": {
+        "color": "#3b82f6",
+        "blurPx": 0,
+        "intensity": null
+      },
+      "notes": "Cards are plain 1px solid rectangles with muted blue-gray borders #334155 and rounded corners ~10px. Low-contrast subtle containment lines on dark surfaces; no glow, no brackets."
+    },
+    "dividers": {
+      "presence": "full",
+      "style": "solid",
+      "widthPx": 1,
+      "color": "#334155",
+      "cornerRadiusPx": 0,
+      "glow": null,
+      "notes": "Thin 1px horizontal separators between list rows (announcements) and under card headers (calendar header divider, astronaut header divider, footer top divider). Sidebar-to-content vertical divider ~#2e3a4d."
+    },
+    "inputs": {
+      "presence": "full",
+      "style": "solid",
+      "widthPx": 1,
+      "color": "#334155",
+      "cornerRadiusPx": 8,
+      "glow": null,
+      "notes": "Search input is a dark inset rounded rectangle (radius ~8px), border muted blue-gray."
+    },
+    "activeIndicators": {
+      "presence": "partial",
+      "style": "solid",
+      "widthPx": 0,
+      "color": "#3b82f6",
+      "cornerRadiusPx": 6,
+      "glow": null,
+      "notes": "Active nav item (Home) is a blue-filled rounded row (#3b82f6 fill, white text, ~6px radius) with a small white status dot — a filled active state rather than a left accent bar."
+    }
+  },
+  "layout": {
+    "regions": [
+      {
+        "name": "leftSidebar",
+        "topBar": false,
+        "leftBar": true,
+        "rightBar": false,
+        "bottomBar": false,
+        "cards": false,
+        "gauges": false,
+        "radar": false
+      },
+      {
+        "name": "topBar",
+        "topBar": true,
+        "leftBar": false,
+        "rightBar": false,
+        "bottomBar": false,
+        "cards": false,
+        "gauges": false,
+        "radar": false
+      },
+      {
+        "name": "mainContent",
+        "topBar": false,
+        "leftBar": false,
+        "rightBar": false,
+        "bottomBar": false,
+        "cards": true,
+        "gauges": true,
+        "radar": false
+      }
+    ]
+  },
+  "keyElements": [
+    {
+      "type": "sidebar-nav",
+      "description": "Left navigation rail (~255px) with NAVIGATION heading, 5 nav links (Home active blue-filled, Missions, Astronauts, Resources, Settings), and a Need help? support card at the bottom",
+      "region": "leftSidebar"
+    },
+    {
+      "type": "topbar",
+      "description": "Top utility bar (~64px): search input (Search NovaFleet...), theme icon, notification bell with blue unread dot, circular JD avatar",
+      "region": "topBar"
+    },
+    {
+      "type": "hero-banner",
+      "description": "Full-width Mission Dashboard hero card with blue-indigo gradient banner (#213f95 to #312d82), rocket icon, ORION EXPLORER IV title, green PRE-LAUNCH status pill",
+      "region": "mainContent"
+    },
+    {
+      "type": "countdown",
+      "description": "MISSION COUNTDOWN clock (05:14:23:05) inside the dashboard card",
+      "region": "mainContent"
+    },
+    {
+      "type": "stat-tiles",
+      "description": "4 compact metric tiles inside the dashboard card: Crew 6, Duration 142d, Altitude 408km, Systems 100% (green)",
+      "region": "mainContent"
+    },
+    {
+      "type": "footer",
+      "description": "Bordered footer: NovaFleet branding + copyright left, support/docs/bug/GitHub links right, version note v1.0.3",
+      "region": "bottom"
+    }
+  ],
+  "widgets": {
+    "reference": [
+      {
+        "name": "MISSION DASHBOARD",
+        "type": "banner",
+        "region": "mainContent-top",
+        "description": "Wide mission summary card with countdown clock, 4 stat tiles (Crew/Duration/Altitude/Systems), and PRE-LAUNCH status pill"
+      },
+      {
+        "name": "FLEET CALENDAR",
+        "type": "calendar",
+        "region": "mainContent-middle-left",
+        "description": "Events This Week calendar card: 3 weekly events (Monday Mission Briefing 09:00, Wednesday Crew Training 14:30, Friday System Review 11:00) with leading icons, day labels, and View Full Calendar button"
+      },
+      {
+        "name": "ASTRONAUT OF THE WEEK",
+        "type": "profile-card",
+        "region": "mainContent-middle-right",
+        "description": "Astronaut profile card: circular photo with blue ring, Dr. Abel Chen, Mission Specialist role (blue), italic quote, bio, View Profile blue button"
+      },
+      {
+        "name": "GALACTIC ANNOUNCEMENTS",
+        "type": "list",
+        "region": "mainContent-bottom-left",
+        "description": "Announcement list card: 4 rows with colored status dots (red Orion launch, yellow Radiation Shielding, yellow Fleet-wide Update, green Research Achievements), title + summary + timestamp, View All link"
+      },
+      {
+        "name": "MISSION RESOURCES",
+        "type": "list",
+        "region": "mainContent-bottom-right",
+        "description": "Resource list card: 4 rows (Mission Manual PDF, Training Materials DOCS, Star Charts APP, Equipment Specs PDF) with document icons, badges, last-updated timestamps, View All Resources button"
+      }
+    ],
+    "matches": [
+      {
+        "reference": "MISSION DASHBOARD",
+        "slot": "info",
+        "match": "partial",
+        "note": "Clock/specs slot becomes the mission countdown + stat readout"
+      },
+      {
+        "reference": "MISSION DASHBOARD stat tiles (Crew/Duration/Altitude/Systems)",
+        "slot": "cpu",
+        "match": "partial",
+        "note": "Gauge slot becomes the 4 compact metric tiles"
+      },
+      {
+        "reference": "GALACTIC ANNOUNCEMENTS",
+        "slot": "processes",
+        "match": "high",
+        "note": "Top-processes list becomes the announcement list with colored status dots"
+      },
+      {
+        "reference": "MISSION RESOURCES",
+        "slot": "traffic",
+        "match": "partial",
+        "note": "Traffic chart slot becomes the resource list with file badges"
+      }
+    ],
+    "featured": {
+      "reference": "FLEET CALENDAR",
+      "name": "FLEET CALENDAR",
+      "slot": "globe",
+      "note": "Calendar widget replaces the WORLD VIEW globe — a self-contained weekly-events card with day labels, event rows, and a View Full Calendar button"
+    }
+  }
+}

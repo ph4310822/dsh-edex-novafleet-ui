@@ -1,0 +1,92 @@
+/* Announcements widget: list with colored status dots + loadavg footer. */
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.headerTitle {
+  color: var(--edex-text-primary, #f8fafc);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.viewAll {
+  color: var(--edex-green);
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 4px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--edex-border) 50%, transparent);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  color: var(--edex-text-primary, #f8fafc);
+  font-size: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.summary {
+  color: var(--edex-text-secondary, #94a3b8);
+  font-size: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.time {
+  flex: none;
+  color: var(--edex-dim);
+  font-size: 8px;
+  white-space: nowrap;
+}
+
+.footer {
+  margin: 4px -12px -10px;
+  padding: 6px 12px;
+  border-top: 1px solid var(--edex-border);
+}
+
+.footText {
+  color: var(--edex-dim);
+  font-size: 9px;
+}

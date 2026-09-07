@@ -1,0 +1,69 @@
+/* Shared widget section chrome: the NovaFleet card with an optional near-white
+   heading and a bottom divider border, plus layout variants. Cards float with
+   gaps against the dark navy canvas. The center slot is reset to transparent
+   so the original DSH UI shows through. */
+
+.section {
+  padding: 10px 12px;
+  background: var(--edex-panel-2);
+  border: 1px solid var(--edex-border);
+  border-radius: 10px;
+  margin: 4px 6px;
+}
+
+.section:last-child {
+  margin-bottom: 6px;
+}
+
+.title {
+  color: var(--edex-text-primary, #f8fafc);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--edex-border);
+}
+
+/* Flex-fill the bar's leftover height (screen - other sections). */
+.fill {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Tight padding for full-bleed widgets (the globe). */
+.compact {
+  padding: 2px 4px;
+}
+
+/* Zero the chrome padding so the widget body owns all inner spacing
+   (full-bleed bottom widgets like the file list and terminal). */
+.bleed {
+  padding: 0;
+}
+
+/* Keep the section heading inset from the card edges when the section body
+   is compact (the globe) or bleed (bottom widgets). The title padding
+   compensates the section's own padding so every title text lands at the
+   same inset as the default sections (10px top, 12px sides):
+   compact section = 2px/4px &rarr; title 8px/8px; bleed section = 0 &rarr; 10px/12px. */
+.compact .title {
+  padding: 8px 8px 0;
+}
+
+.bleed .title {
+  padding: 10px 12px 0;
+}
+
+/* The center slot hosts the ORIGINAL DSH UI — it must NEVER carry the
+   card treatment (background, border, margin, padding, box-shadow), or
+   the workspace (sidebar, conversation, composer) is hidden behind an
+   opaque panel. Reset every property to transparent/0. */
+.section[data-widget='center'] {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}

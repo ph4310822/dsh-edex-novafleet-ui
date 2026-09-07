@@ -1,0 +1,117 @@
+/* Resources widget: list of resource items with file badges. */
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.headerTitle {
+  color: var(--edex-text-primary, #f8fafc);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  background: color-mix(in srgb, var(--edex-panel) 40%, var(--edex-panel-2));
+  border: 1px solid var(--edex-border);
+  border-radius: 6px;
+}
+
+.icon {
+  flex: none;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  color: var(--edex-text-primary, #f8fafc);
+  font-size: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1px;
+}
+
+.badge {
+  font-size: 8px;
+  padding: 0 4px;
+  background: color-mix(in srgb, var(--edex-green) 12%, transparent);
+  color: var(--edex-green);
+  border-radius: 3px;
+  letter-spacing: 1px;
+}
+
+.updated {
+  color: var(--edex-dim);
+  font-size: 8px;
+}
+
+.footer {
+  margin: 4px 0;
+}
+
+.viewAllBtn {
+  width: 100%;
+  padding: 4px 0;
+  background: transparent;
+  border: 1px solid var(--edex-border);
+  border-radius: 6px;
+  color: var(--edex-green);
+  font-family: var(--edex-font);
+  font-size: 9px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.viewAllBtn:hover {
+  background: color-mix(in srgb, var(--edex-green) 8%, transparent);
+}
+
+.netHint {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 4px 0;
+  border-top: 1px solid var(--edex-border);
+  font-size: 9px;
+}
+
+.netKey {
+  color: var(--edex-dim);
+  letter-spacing: 1px;
+}
+
+.netVal {
+  color: var(--edex-green);
+}

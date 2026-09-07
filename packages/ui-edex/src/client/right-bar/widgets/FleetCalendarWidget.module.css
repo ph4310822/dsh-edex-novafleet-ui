@@ -1,0 +1,128 @@
+/* Fleet Calendar widget: weekly events calendar card. */
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.headerTitle {
+  color: var(--edex-text-primary, #f8fafc);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.headerSub {
+  color: var(--edex-green);
+  font-size: 9px;
+}
+
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.eventList::-webkit-scrollbar {
+  display: none;
+}
+
+.eventRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  background: color-mix(in srgb, var(--edex-panel) 40%, var(--edex-panel-2));
+  border: 1px solid var(--edex-border);
+  border-radius: 6px;
+}
+
+.dayColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 24px;
+}
+
+.dayName {
+  color: var(--edex-dim);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.dayDate {
+  color: var(--edex-text-primary, #f8fafc);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.eventIcon {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 11px;
+}
+
+.eventIcon[data-variant='video'] {
+  background: color-mix(in srgb, #3b82f6 18%, transparent);
+}
+
+.eventIcon[data-variant='crew'] {
+  background: color-mix(in srgb, #22c55e 18%, transparent);
+}
+
+.eventIcon[data-variant='doc'] {
+  background: color-mix(in srgb, #3b82f6 18%, transparent);
+}
+
+.eventContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.eventTitle {
+  color: var(--edex-text-primary, #f8fafc);
+  font-size: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.eventTime {
+  color: var(--edex-dim);
+  font-size: 8px;
+  margin-top: 1px;
+}
+
+.viewAllBtn {
+  width: 100%;
+  margin-top: 6px;
+  padding: 4px 0;
+  background: transparent;
+  border: 1px solid var(--edex-border);
+  border-radius: 6px;
+  color: var(--edex-green);
+  font-family: var(--edex-font);
+  font-size: 9px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.viewAllBtn:hover {
+  background: color-mix(in srgb, var(--edex-green) 8%, transparent);
+}

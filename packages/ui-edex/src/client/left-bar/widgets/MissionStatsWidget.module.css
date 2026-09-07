@@ -1,0 +1,55 @@
+/* Mission Stats widget: 4 stat tiles + CPU hint. */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: color-mix(in srgb, var(--edex-panel) 40%, var(--edex-panel-2));
+  border: 1px solid var(--edex-border);
+  border-radius: 6px;
+  padding: 6px 4px;
+}
+
+.statValue {
+  color: var(--edex-text-primary, #f8fafc);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.statValueGreen {
+  color: #22c55e;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.statLabel {
+  color: var(--edex-dim);
+  font-size: 8px;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.cpuHint {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-top: 1px solid var(--edex-border);
+}
+
+.cpuKey {
+  color: var(--edex-dim);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.cpuPct {
+  color: var(--edex-green);
+  font-size: 10px;
+}

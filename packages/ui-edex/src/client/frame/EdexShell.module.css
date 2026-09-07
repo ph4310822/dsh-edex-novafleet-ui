@@ -1,0 +1,178 @@
+/* eDEX shell frame: fixed full-viewport layer tiling the top panel and
+   left/right bars around the original UI (which the reshape effect squeezes
+   into the center region), with the bottom widget panel below. NovaFleet
+   mission-control skin: dark navy canvas (#0f1726), blue-gray card surface
+   (#1e2938), bright blue accent (#3b82f6), 1px muted gray-blue card borders
+   (#334155) with ~10px radius. Flat dashboard — no scanline texture. */
+
+.shell {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  /* The overlay layer makes direct children interactive by default; the shell
+     is click-through everywhere except the panel cells below. */
+  pointer-events: none;
+
+  --edex-bg: #0f1726;
+  --edex-panel: #0f1726;
+  --edex-panel-2: #1e2938;
+  --edex-border: #334155;
+  --edex-green: #3b82f6;
+  --edex-dim: #64748b;
+  --edex-amber: #fbbf24;
+  --edex-red: #ef4444;
+  --edex-cyan: #60a5fa;
+  --edex-text-primary: #f8fafc;
+  --edex-text-secondary: #94a3b8;
+  --edex-font: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, Menlo, monospace;
+
+  /* The top panel is empty, so it takes no space: the bars and center region
+     tile from the very top edge. Raise this to give the panel a height again
+     when it hosts content. */
+  --edex-topbar-h: 0px;
+
+  font-family: var(--edex-font);
+  color: var(--edex-green);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.leftBar {
+  position: absolute;
+  left: 0;
+  /* Bottom-anchored above the bottom bar (top edge at the viewport top). */
+  top: var(--edex-topbar-h);
+  bottom: 36vh;
+  width: 17vw;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--edex-panel);
+  overflow: hidden;
+}
+
+.rightBar {
+  position: absolute;
+  right: 0;
+  top: var(--edex-topbar-h);
+  bottom: 36vh;
+  width: 21.25vw;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--edex-panel);
+  overflow: hidden;
+}
+
+/* The bottom bar: one strip hosting the three bottom widgets (filesystem
+   browser, file preview/editor, host terminal) as widget sections. */
+.bottomBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 36vh;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--edex-panel);
+  overflow: hidden;
+}
+
+/* The empty top panel: a full-width strip overlaying the shell's top edge
+   above every other layer (left/right bars and the center region start below
+   it). Click-through until it hosts interactive content. */
+.topPanel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--edex-topbar-h);
+  z-index: 40;
+  pointer-events: none;
+  background: var(--edex-panel);
+}
+
+/* The center region wrapper: hosts the ORIGINAL UI area inside the same
+   widget chrome as the shell bars — a 1px border card with the NovaFleet
+   title bar strip (~18px). The inner WidgetSection stays transparent so the
+   original DSH UI shows through. Click-through so the original UI stays
+   interactive. */
+.centerWidget {
+  position: absolute;
+  left: 17vw;
+  right: 21.25vw;
+  top: var(--edex-topbar-h);
+  bottom: 36vh;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--edex-border);
+  border-radius: 10px;
+  background: transparent;
+}
+
+/* NovaFleet title bar strip at the top of the center workspace card. The
+   same card-surface fill as widget sections, accent-colored title text,
+   bottom divider border — matching the reference's card-header language. */
+.centerTitle {
+  flex: none;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  background: var(--edex-panel-2);
+  color: var(--edex-green);
+  font-size: 11px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid var(--edex-border);
+  border-radius: 10px 10px 0 0;
+}
+
+/* The center scanline is removed for the NovaFleet flat-dashboard theme
+   (the reference has no scanline/CRT texture). */
+.centerScanline {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: transparent;
+}
+
+/* Terminal path prompt at the LEFT edge of the composer input: `~/<folder>`
+   on the same line as the textarea (classic `$ cwd` style). Injected by
+   EdexShell inside the draft scrollport, before the text stack;
+   TerminalComposer.module.css makes the scrollport a flex row so this element
+   (flex: none) sits beside the input (flex: 1). Metrics align it with the
+   textarea's first line: the input text starts at 16px left / 4px top padding,
+   so the prompt mirrors that inset. */
+.pathPrompt {
+  flex: none;
+  padding: 4px 0 0 16px;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--edex-amber);
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Fullscreen toggle button injected into the sidebar workspace header
+   (EdexShell's DOM injector): the same 28px icon-control footprint as the
+   stock header buttons, themed by TerminalSidebar.module.css via
+   [data-edex-fullscreen]. */
+.fullscreenBtn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background: transparent;
+  color: var(--edex-green);
+  font-family: var(--edex-font);
+  cursor: pointer;
+}

@@ -1,4 +1,4 @@
-# dsh-edex-ui-novafleet
+# dsh-edex-novafleet-ui
 
 **DeepSeek Harness eDEX-UI shell plugin — NovaFleet Mission Control theme.** A
 mission-control dashboard skin for the DSH web GUI, themed from the NovaFleet
@@ -7,7 +7,9 @@ surface, bright blue `#3b82f6` accent, 1px `#334155` card borders with ~10px
 radius, flat dashboard — no scanlines). Wraps the original UI with mission
 telemetry, a fleet calendar, announcements, and a resources list.
 
-![dsh-edex-ui-novafleet screenshot](packages/bundle/assets/screenshot.png)
+![theme preview](preview.gif)
+
+![dsh-edex-novafleet-ui screenshot](packages/bundle/assets/screenshot.png)
 
 ## Features
 

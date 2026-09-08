@@ -1,5 +1,5 @@
 {
-  "name": "@danielng23/dsh-host-system-metrics",
+  "name": "@danielng23/dsh-novafleet-host-system-metrics",
   "description": "dsh-edex-ui NovaFleet host system metrics remote",
   "version": "0.1.0",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ph4310822/dsh-edex-novafleet-ui.git",
+    "url": "https://github.com/ph4310822/dsh-edex-novafleet-ui.git",
     "directory": "packages/host/system-metrics"
   },
   "type": "module",

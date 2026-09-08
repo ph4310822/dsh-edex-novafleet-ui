@@ -1,5 +1,5 @@
 {
-  "name": "@danielng23/dsh-client-ui-theme-terminal",
+  "name": "@danielng23/dsh-novafleet-client-ui-theme-terminal",
   "description": "dsh-edex-ui NovaFleet terminal theme row",
   "version": "0.1.0",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ph4310822/dsh-edex-novafleet-ui.git",
+    "url": "https://github.com/ph4310822/dsh-edex-novafleet-ui.git",
     "directory": "packages/ui-theme-terminal"
   },
   "type": "module",
